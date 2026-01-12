@@ -1,0 +1,8 @@
+frontend/
+tests/
+venv/
+.git/
+.github/
+infrastructure/
+__pycache__/
+*.pyc

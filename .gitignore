@@ -1,0 +1,8 @@
+.venv
+.github/
+__pycache__/
+.env
+.vscode/
+logs/
+Dev_Plan.md
+HealthSage.AI.egg-info/
