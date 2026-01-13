@@ -1,8 +1,9 @@
 frontend/
+infrastructure/
 tests/
-venv/
+.venv/
 .git/
 .github/
-infrastructure/
 __pycache__/
 *.pyc
+.aws-sam/

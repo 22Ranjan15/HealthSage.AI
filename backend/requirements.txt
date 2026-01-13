@@ -1,0 +1,20 @@
+# --- Core API & Serverless ---
+fastapi
+mangum
+pydantic
+pydantic-settings
+uvicorn  # Needed if you run the container locally for testing, small enough to keep
+
+# --- AI & Orchestration (Inference Only) ---
+langchain-core
+langchain-google-genai
+langgraph
+
+# --- Database & Storage ---
+qdrant-client
+upstash-redis
+
+# --- Utilities ---
+python-dotenv
+requests
+numpy<2.0.0
