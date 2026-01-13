@@ -1,0 +1,66 @@
+# 1. Standard Boilerplate
+AWSTemplateFormatVersion: '2010-09-09' 
+Transform: AWS::Serverless-2016-10-31
+Description: HealthSage AI - Serverless RAG (Zip Deployment)
+
+# 2. Globals (Default Settings)
+Globals:
+  Function:
+    Timeout: 60
+    MemorySize: 512
+
+# 3. Resources (The Actual "Things" being built)
+Resources:
+  # 1. The Storage Bucket
+  DocumentBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      # Creates a unique name like: healthsage-docs-123456789-ap-south-1
+      BucketName: !Sub 'healthsage-docs-${AWS::AccountId}-${AWS::Region}'
+      VersioningConfiguration:
+        Status: Enabled
+      # Security Best Practices (No public access)
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  # Resource Name: HealthSageFunction
+  HealthSageFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../backend/
+      Handler: main.handler
+      Runtime: python3.11
+      Architectures:
+        - x86_64
+
+      # Grant permission to read from the bucket defined above
+      Policies:
+        - S3ReadPolicy:
+            BucketName: !Ref DocumentBucket
+      
+      # Environment: These connect our code to the outside world
+      Environment:
+        Variables:
+          PROJECT_NAME: "HealthSage AI"
+          DOCUMENT_BUCKET: !Ref DocumentBucket
+
+      # Events: Triggers. What makes this code run?
+      Events:
+        ChatApi:
+          Type: Api # We want an HTTP API
+          Properties:
+            Path: /{proxy+} # A Wildcard. It catches 'any' URL path (/chat, /users, /login) and sends it to FastAPI
+            Method: ANY     # It accepts GET, POST, PUT, DELETE.
+
+# 4. Outputs (What to show us when finished)
+Outputs:
+  HealthSageApi:
+    Description: "API Gateway endpoint URL"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+
+  DocumentBucketName:
+    Description: "S3 Bucket for uploading PDFs"
+    Value: !Ref DocumentBucket

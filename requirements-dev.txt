@@ -1,0 +1,20 @@
+# --- Install Backend Deps First ---
+-r backend/requirements.txt
+
+# --- AWS SDK (Required locally, built-in on Lambda) ---
+boto3
+
+# --- Data Ingestion & ETL (Heavy Stuff) ---
+pypdf
+langchain-text-splitters
+langchain-community
+sentence-transformers
+langchain-huggingface
+langchain-qdrant
+
+# --- Testing & Quality ---
+pytest
+httpx
+ragas 
+
+-e .
