@@ -7,3 +7,4 @@ logs/
 Dev_Plan.md
 HealthSage.AI.egg-info/
 .aws-sam/
+test.py

@@ -1,14 +1,23 @@
-# 1. Use the AWS Lambda Python 3.11 base image
 FROM public.ecr.aws/lambda/python:3.11
 
-# 2. Copy requirements.txt
-COPY requirements.txt ${LAMBDA_TASK_ROOT}
+# --- 1. Environment Configuration ---
+# Tell FastEmbed/FlashRank where to find the 'baked' models
+ENV FASTEMBED_CACHE_PATH=/var/task/fastembed_cache
+ENV TEXT_EMBEDDING_MODEL_CACHE_DIR=/var/task/fastembed_cache
 
-# 3. Install the heavy libraries
-RUN pip install -r requirements.txt
+# --- 2. Install Python Dependencies ---
+COPY backend/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# 4. Copy the function code
-COPY main.py ${LAMBDA_TASK_ROOT}
+# --- 3. Bake Models (Crucial Step) ---
+COPY backend/scripts/download_models.py .
+RUN python download_models.py
 
-# 5. Set the CMD to your handler (file_name.function_name)
-CMD [ "main.handler" ]
+# --- 4. Copy Application Code ---
+# Structure inside container: /var/task/backend/...
+COPY backend/ ./backend/
+COPY config/ ./config/
+COPY utils/ ./utils/
+
+# --- 5. Handover to Lambda ---
+CMD ["backend.main.handler"]
