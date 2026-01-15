@@ -28,3 +28,7 @@ class RetrievalResponse(BaseModel):
     results: List[DocumentChunk]
     total_found: int
     message: str = "Success"
+
+class SearchRequest(BaseModel):
+    query: str = Field(..., json_schema_extra={"example": "What are treatments for Influenza?"})
+    top_k: int = Field(default=5, ge=1, le=10, json_schema_extra={"example": 3})

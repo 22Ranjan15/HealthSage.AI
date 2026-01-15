@@ -40,15 +40,23 @@ async def search_documents(
         # 2. Transform Logic (Domain -> API)
         api_results = []
         for doc in raw_documents:
-            # Extract score if available (Standard Search), maps to None if using MMR
-            score = doc.metadata.get("score", None)
+            raw_score = doc.metadata.get("score", None)
             
+            if raw_score is not None:
+                score = float(raw_score)
+            else:
+                score = None
+
+            clean_metadata = doc.metadata.copy()
+            if "score" in clean_metadata:
+                clean_metadata["score"] = score
+
             api_results.append(
                 DocumentChunk(
                     content=doc.page_content,
                     source=doc.metadata.get("source", "Unknown Source"),
                     score=score,
-                    metadata=doc.metadata
+                    metadata=clean_metadata
                 )
             )
 

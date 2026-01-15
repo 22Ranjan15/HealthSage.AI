@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What are the withdrawal symptoms associated with stopping caffeine use abruptly?",
+    "ground_truth": "Withdrawal symptoms may include throbbing headaches, fatigue, drowsiness, yawning, irritability, restlessness, vomiting, or runny nose. These symptoms can last for as long as a week if caffeine is avoided."
+  },
+  {
+    "question": "How do calcium channel blockers work to treat high blood pressure?",
+    "ground_truth": "Calcium channel blockers slow the movement of calcium into the cells of the heart and blood vessels. This relaxes the blood vessels, increases the supply of oxygen-rich blood to the heart, and reduces the heart's workload."
+  },
+  {
+    "question": "What is the most common way Campylobacteriosis is spread?",
+    "ground_truth": "Improper or incomplete food preparation is the most common way, with poultry accounting for over half the cases. Untreated water and raw milk are also potential sources."
+  },
+  {
+    "question": "What are the seven warning signals of cancer established by the American Cancer Society?",
+    "ground_truth": "The seven warning signals are: changes in the size, color, or shape of a wart or mole; a sore that does not heal; persistent cough, hoarseness, or sore throat; a lump or thickening in the breast or elsewhere; unusual bleeding or discharge; chronic indigestion or difficulty in swallowing; and any change in bowel or bladder habits."
+  },
+  {
+    "question": "What are the symptoms of vaginal candidiasis?",
+    "ground_truth": "Most women with vaginal candidiasis experience severe vaginal itching, a discharge that often looks like cottage cheese and has a sweet or bread-like odor, and a vulva and vagina that are red, swollen, and painful. Sexual intercourse can also be painful."
+  },
+  {
+    "question": "How can canker sores be distinguished from cold sores?",
+    "ground_truth": "Canker sores occur inside the mouth, appear as whitish round areas with a red border, and are not infectious. Cold sores (fever blisters) are caused by the herpes simplex virus, are infectious, and usually occur outside the mouth on the lips and gums."
+  },
+  {
+    "question": "What diagnostic test is used to identify lactose intolerance in children and adults?",
+    "ground_truth": "The hydrogen breath test is used. The patient drinks a beverage containing lactose, and their breath is analyzed. The presence of hydrogen in the breath indicates faulty digestion of lactose."
+  },
+  {
+    "question": "Why is carbon monoxide dangerous to the human body?",
+    "ground_truth": "Carbon monoxide binds to hemoglobin more readily than oxygen (over 200 times more), forming carboxyhemoglobin. This blocks oxygen from being transported to cells, leading to cellular metabolism disruption and cell death."
+  },
+  {
+    "question": "What is the primary purpose of performing a cardiac catheterization?",
+    "ground_truth": "It is a diagnostic tool used to examine how the heart and its blood vessels function. It gathers information such as the adequacy of blood supply through coronary arteries, blood pressures, and blood flow, often used to diagnose heart disease."
+  },
+  {
+    "question": "What are the key components of a cardiac rehabilitation program?",
+    "ground_truth": "Components typically include exercise (starting with range-of-motion and walking), nutritional counseling (low-fat, low-cholesterol diet), psychological counseling (for stress and depression), patient education, and smoking cessation."
+  },
+  {
+    "question": "What is cardiac tamponade and how is it treated?",
+    "ground_truth": "Cardiac tamponade is a condition where fluid collects in the pericardial sac, compressing the heart and preventing it from pumping properly. It is treated by pericardiocentesis, where a needle is inserted into the chest to drain the fluid."
+  },
+  {
+    "question": "When should Cardiopulmonary Resuscitation (CPR) be performed?",
+    "ground_truth": "CPR should be performed if a person is unconscious and not breathing (respiratory arrest) and/or their heart has stopped (cardiac arrest). It must be performed within four to six minutes to prevent brain damage or death."
+  },
+  {
+    "question": "What causes carpal tunnel syndrome?",
+    "ground_truth": "It is caused by compression of the median nerve at the wrist. Risk factors include pregnancy, obesity, arthritis, thyroid conditions, diabetes, and repetitive wrist motions."
+  },
+  {
+    "question": "What are the typical symptoms of cat-scratch disease?",
+    "ground_truth": "The first sign is often a small blister at the scratch or bite site 3 to 10 days after injury. Within two weeks, lymph nodes near the site become swollen. Other symptoms include fever, fatigue, and headaches."
+  },
+  {
+    "question": "What triggers the immune response in Celiac disease?",
+    "ground_truth": "Gluten, a protein found in wheat, rye, barley, and possibly oats. In affected individuals, gluten causes an inflammatory response in the small intestine that damages tissues and impairs nutrient absorption."
+  },
+  {
+    "question": "What are the risks of withdrawing from Central Nervous System (CNS) depressants?",
+    "ground_truth": "Withdrawal can cause rebound insomnia or anxiety, and in severe cases, life-threatening seizures. Withdrawal should generally be undertaken under a physician's supervision, often by gradually reducing the dosage."
+  },
+  {
+    "question": "What virus is associated with causing cancer of the cervix?",
+    "ground_truth": "The human papilloma virus (HPV), which is sexually transmitted, has been shown to cause cancer of the cervix."
+  },
+  {
+    "question": "What are the indications that a person is choking?",
+    "ground_truth": "Indications include the inability to speak or cry out, the face turning blue (cyanosis) from lack of oxygen, grabbing at the throat, and a weak cough or labored breathing producing a high-pitched noise."
+  },
+  {
+    "question": "What is the difference between neoadjuvant and adjuvant chemotherapy?",
+    "ground_truth": "Neoadjuvant chemotherapy is used before surgery or radiation to reduce the size of a tumor. Adjuvant chemotherapy is given after surgery or other treatments to destroy any remaining cancerous cells."
+  },
+  {
+    "question": "What is the treatment for anaphylactic shock caused by an allergic reaction?",
+    "ground_truth": "Immediate emergency medical care is required. Treatment typically involves the administration of epinephrine (adrenaline) to open airways and raise blood pressure, along with antihistamines and steroids."
+  }
+]

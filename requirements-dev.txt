@@ -14,7 +14,9 @@ langchain-qdrant
 
 # --- Testing & Quality ---
 pytest
+pytest-asyncio
 httpx
 ragas 
+numpy
 
 -e .

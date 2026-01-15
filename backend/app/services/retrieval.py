@@ -48,6 +48,12 @@ class RetrievalService:
     def __init__(self):
         try:
             logger.info("Initializing Retrieval Service Connection...")
+            
+            # --- ADD THIS DEBUG BLOCK ---
+            print(f"DEBUG: QDRANT_URL from Config is: '{Config.QDRANT_URL}'")
+            print(f"DEBUG: API Key length is: {len(Config.QDRANT_URL) if Config.QDRANT_URL else 0}")
+            # ----------------------------
+            
             self.client = QdrantClient(
                 url=Config.QDRANT_URL, 
                 api_key=Config.QDRANT_API_KEY

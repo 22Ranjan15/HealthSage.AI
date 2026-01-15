@@ -8,3 +8,5 @@ Dev_Plan.md
 HealthSage.AI.egg-info/
 .aws-sam/
 test.py
+.pytest_cache/
+.ipynb_checkpoints/
