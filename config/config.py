@@ -24,6 +24,9 @@ class Config:
     # --- HuggingFace API ---
     HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY")
     
+    # --- Tools ---
+    TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
+
     # --- Models ---
     # Dense: Understanding meaning (Semantic)
     EMBEDDING_MODEL_NAME = "BAAI/bge-base-en-v1.5"
@@ -35,24 +38,20 @@ class Config:
     # Reranker: Filtering results (FlashRank)
     RERANKER_MODEL_NAME = "ms-marco-MiniLM-L-12-v2"
     
-    # Generative: Answer generation (Gemini)
-    LLM_MODEL_NAME = "gemini-3-flash-preview"
-    RATE_LIMIT_RPM = 15
-    RATE_LIMIT_INTERVAL = 60 / RATE_LIMIT_RPM
+    # Evaluation Model
+    RAGAS_EVAL_MODEL = "meta-llama/Meta-Llama-3.1-8B-Instruct"
 
-    # RAGAS Evaluation Model
-    RAGAS_EVAL_MODEL = "meta-llama/Llama-3.1-8B-Instruct"
-
-    # --- Chunking Strategies ---
+    # Chunking Strategies
     CHUNK_SIZE = 1000
     CHUNK_OVERLAP = 200
-
 
     @staticmethod
     def validate():
         if not Config.QDRANT_URL or not Config.QDRANT_API_KEY:
             raise ValueError("CRITICAL: QDRANT_URL or QDRANT_API_KEY missing.")
         if not Config.HUGGINGFACE_API_KEY:
-            raise ValueError("CRITICAL: HUGGINGFACE_API_KEY is missing. Ragas cannot run.")
+            raise ValueError("CRITICAL: HUGGINGFACE_API_KEY is missing.")
+        if not Config.TAVILY_API_KEY:
+            raise ValueError("CRITICAL: TAVILY_API_KEY is missing.")
 
 Config.validate()
